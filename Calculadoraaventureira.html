@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+    <script lang="Javascript">
+        var n1, n2, res, operador;
+
+        function clicouNoBotao(qual)
+        {
+            document.frm.txtSaida.value += qual;
+        }
+        function Operacao(sinal)
+        {
+            n1 = parseFloat(document.frm.txtSaida.value);
+            sinal1 = sinal;
+            document.frm.txtSaida.value = "";
+            
+        }
+        function Limpar()
+        {
+            document.frm.txtSaida.value = "";
+        }
+        function Igual()
+        {
+            n2 = parseFloat(document.frm.txtSaida.value);
+            switch (sinal1)
+            {
+            case '/':           
+                res = n1 / n2;
+            break;
+
+            case '*':
+                res = n1 * n2;
+            break;
+
+            case '-':
+                res = n1 - n2;
+            break;
+
+            case '+':
+                res = n1 + n2;
+            break;
+            }
+            document.frm.txtSaida.value = res;
+        }
+
+    </script>
+<style type="text/css">
+    input[type=text], p
+    {
+       font-family: cursive;
+       font-size: 30px;
+       border-radius: 10px;
+       height: 60px;
+       width: 252px;
+       text-align: right;
+    }  
+    input[type=button]
+    {
+        font-family: cursive;
+        border-radius: 10px;  
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+    div
+    {
+        width: 350px;
+        height: 500px;
+        margin-left: auto;
+        margin-right:auto;
+        background-color: gray;
+        border-radius: 10px;
+    }
+    .calculadora
+    {
+        border-style: groove;
+        border-color: black;
+        margin-top: 80px;
+    }
+    .bot
+    {
+        width: 252px;
+        height: 300px;
+        padding-left: auto;
+        padding-right: auto;
+        padding-top: 55px;
+    }
+    .tela
+    {
+        width: 252px;
+        height: 60px;
+        padding-left: auto;
+        padding-right: auto;
+        padding-top: 40px;
+    }
+    body
+    {
+        background-color: rgb(194, 226, 255);
+    }
+    .titulo
+    {
+        font-size: 90px;
+        height: 70px;
+        width: 700px;
+        margin-top: 30px;
+        text-align: center;
+        background-color: rgb(194, 226, 255);
+        font-family: monospace;
+    }
+    </style>    
+</head>
+<body>
+<div class="titulo">Calculadora</div>
+<div class="calculadora">
+    <form name="frm">
+        <div class="tela">
+            <input type="text" name="txtSaida" readonly>
+        </div> 
+        
+        <div class="bot">
+            <input type="button" name="btnSete" value="7" onclick="clicouNoBotao(7);">
+            <input type="button" name="btnOito" value="8" onclick="clicouNoBotao(8);">
+            <input type="button" name="btnNove" value="9" onclick="clicouNoBotao(9);">
+            <input type="button" name="btnDiv" value="÷" onclick="Operacao('/');"><br>
+            <input type="button" name="btnQuatro" value="4" onclick="clicouNoBotao(4);">
+            <input type="button" name="btnCinco" value="5" onclick="clicouNoBotao(5);">
+            <input type="button" name="btnSeis" value="6" onclick="clicouNoBotao(6);">
+            <input type="button" name="btnMulti" value="x" onclick="Operacao('*');"><br>
+            <input type="button" name="btnUm" value="1" onclick="clicouNoBotao(1);">
+            <input type="button" name="btnDois" value="2" onclick="clicouNoBotao(2);">
+            <input type="button" name="btnTres" value="3" onclick="clicouNoBotao(3);">
+            <input type="button" name="btnMenos" value="-" onclick="Operacao('-');"><br>
+            <input type="button" name="btnDez" value="0" onclick="clicouNoBotao(0);">
+            <input type="button" name="btnPonto" value="." onclick="clicouNoBotao('.');">
+            <input type="button" name="btnClear" value="C" onclick="Limpar('C');">
+            <input type="button" name="btnMais" value="+" onclick="Operacao('+');"><br>
+            <input style="width:252px" type="button" name="btnIgual" value="=" onclick="Igual('=');">
+        </div>
+        <br>
+
+    </form>
+</div>
+</body>
+</html>
